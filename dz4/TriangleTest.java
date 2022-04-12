@@ -20,14 +20,14 @@ public class TriangleTest {
 
     @Test
     @DisplayName("Первый негативный тест")
-    void successCalculationTest3() throws Exception {
-        assertEquals(TriangleArea.calculateArea(3,4,5), 2);
+    void negativeSquareCalcTest3() {
+        assertThatExceptionOfType(Exception.class).isThrownBy(() -> assertEquals(TriangleArea.calculateArea(-2,5,3), "Некорректный треугольник!!"));
     }
 
     @Test
     @DisplayName("Второй негативный тест")
-    void successCalculationTest4() throws Exception {
-        assertEquals(TriangleArea.calculateArea(4,5,0), 2);
+    void negativeSquareCalcTest4() {
+        assertThatExceptionOfType(Exception.class).isThrownBy(() -> assertEquals(TriangleArea.calculateArea(1,0,3), "Некорректный треугольник!!"));
     }
 
 }
